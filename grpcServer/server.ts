@@ -1,14 +1,15 @@
 import grpc from "grpc";
+
+import { HouseService } from "./services/houseService";
+import { PersonService } from "./services/personService";
 import {
-  HouseServiceService,
   IHouseServiceServer,
-} from "./../generated/house_grpc_pb";
+  HouseServiceService,
+} from "../generated/grpcServer/house_grpc_pb";
 import {
   IPersonServiceServer,
   PersonServiceService,
-} from "./../generated/person_grpc_pb";
-import { HouseService } from "./services/houseService";
-import { PersonService } from "./services/personService";
+} from "../generated/grpcServer/person_grpc_pb";
 
 const server = new grpc.Server();
 server.addService<IHouseServiceServer>(HouseServiceService, new HouseService());

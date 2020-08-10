@@ -1,14 +1,15 @@
 import { mapper } from "../mapper";
 import grpc from "grpc";
 import { allPeople } from "../../database/fake";
-import { IPersonServiceServer } from "../../generated/person_grpc_pb";
+import { IPersonServiceServer } from "../../generated/grpcServer/person_grpc_pb";
 import {
   PersonRequest,
   PersonResponse,
+  Person,
   PersonsRequest,
   PersonsResponse,
-  Person,
-} from "../../generated/person_pb";
+} from "../../generated/grpcServer/person_pb";
+
 export class PersonService implements IPersonServiceServer {
   public getPerson(
     call: grpc.ServerUnaryCall<PersonRequest>,

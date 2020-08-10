@@ -1,4 +1,7 @@
-import { IHouseServiceServer } from "../../generated/house_grpc_pb";
+import { mapper } from "../mapper";
+import grpc from "grpc";
+import { allHouse } from "../../database/fake";
+import { IHouseServiceServer } from "../../generated/grpcServer/house_grpc_pb";
 import {
   HousesBySizeRequest,
   HousesBySizeResponse,
@@ -7,10 +10,7 @@ import {
   House,
   HousesRequest,
   HousesResponse,
-} from "../../generated/house_pb";
-import { mapper } from "../mapper";
-import grpc from "grpc";
-import { allHouse } from "../../database/fake";
+} from "../../generated/grpcServer/house_pb";
 export class HouseService implements IHouseServiceServer {
   public getHousesBySize(
     call: grpc.ServerUnaryCall<HousesBySizeRequest>,

@@ -1,5 +1,4 @@
 import express, { Request, Response, RequestHandler } from "express";
-import { GraphQLSchema } from "graphql";
 import {
   ApolloServerExpressConfig,
   makeExecutableSchema,
